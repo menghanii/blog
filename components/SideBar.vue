@@ -30,13 +30,12 @@ export default {
   },
 
   mounted() {
-    this.$content("/posts", { deep: true })
+    this.$content("posts", { deep: true })
       .only(["title"])
       .fetch()
       .then((result) => {
         this.contentList = result;
       });
-    console.log(this.contentList);
   },
 
   methods: {},
