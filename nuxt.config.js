@@ -45,6 +45,6 @@ export default {
 
   //router
   router: {
-    base: "/",
+    base: "/blog/",
   },
 };
