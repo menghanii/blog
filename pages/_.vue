@@ -21,8 +21,8 @@
 </template>
 <script>
 export default {
-  async asyncData({ $content, params }) {
-    const page = await $content(params.slug, {
+  async asyncData({ $content, route }) {
+    const page = await $content(route.fullPath, {
       deep: true,
     }).fetch();
     return {
