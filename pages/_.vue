@@ -22,11 +22,9 @@
 <script>
 export default {
   async asyncData({ $content, route }) {
-    // remove slash
     const page = await $content(route.fullPath.slice(1), {
       deep: true,
     }).fetch();
-    console.log(page);
     return {
       page,
     };
