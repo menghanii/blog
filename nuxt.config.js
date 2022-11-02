@@ -38,7 +38,15 @@ export default {
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: ["@nuxt/content"],
 
-  generate: {},
+  generate: {
+    async routes() {
+      const { $content } = require("@nuxt/content");
+      const files = await $content({ deep: true }).only(["path"]).fetch();
+      return files.map((file) =>
+        file.path === "/index" ? "/" : "/blog" + file.path
+      );
+    },
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
