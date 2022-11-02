@@ -22,7 +22,7 @@
 <script>
 export default {
   async asyncData({ $content, route }) {
-    const page = await $content("posts", route.fullPath, {
+    const page = await $content(route.fullPath, {
       deep: true,
     }).fetch();
     return {

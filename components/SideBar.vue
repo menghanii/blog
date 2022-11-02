@@ -30,7 +30,7 @@ export default {
   },
 
   mounted() {
-    this.$content("posts", { deep: true })
+    this.$content({ deep: true })
       .only(["title"])
       .fetch()
       .then((result) => {
