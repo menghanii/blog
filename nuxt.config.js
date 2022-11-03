@@ -39,7 +39,7 @@ export default {
   modules: ["@nuxt/content"],
 
   generate: {
-    subFolders: false,
+    // subFolders: false,
     crawler: false,
     // async routes() {
     //   const { $content } = require("@nuxt/content");
