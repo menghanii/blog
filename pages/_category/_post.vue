@@ -21,8 +21,8 @@
 </template>
 <script>
 export default {
-  async asyncData({ $content, route }) {
-    const page = await $content(route.fullPath.slice(1), {
+  async asyncData({ $content, params }) {
+    const page = await $content(`${params.category}/${params.post}`, {
       deep: true,
     }).fetch();
     return {
