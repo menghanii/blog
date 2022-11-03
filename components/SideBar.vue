@@ -3,12 +3,14 @@
     <div class="bg-black">sss</div>
     <div class="mt-16">
       <div v-for="(menu, i) in Object.keys(menus)" :key="i" class="mb-4">
-        <div @click="moveOnTo(menu)">
-          <VMenu
-            :category="menus[menu]['name']"
-            :contents="menus[menu]['content']"
-          ></VMenu>
-        </div>
+        <nuxt-link :to="'/' + menu">
+          <div>
+            <VMenu
+              :category="menus[menu]['name']"
+              :contents="menus[menu]['content']"
+            ></VMenu>
+          </div>
+        </nuxt-link>
       </div>
     </div>
   </div>
@@ -26,11 +28,7 @@ export default {
   },
 
   mounted() {},
-  methods: {
-    moveOnTo(target) {
-      location.href = target;
-    },
-  },
+  methods: {},
 };
 </script>
 

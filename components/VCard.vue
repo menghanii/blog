@@ -1,6 +1,6 @@
 <template>
   <div class="relative border h-64 rounded-lg">
-    <a :href="postPath">
+    <nuxt-link :to="postPath">
       <div class="w-full h-2/3 bg-slate-600 rounded-t-lg">
         <img :src="image" class="object-cover rounded-t-lg h-full" />
       </div>
@@ -11,7 +11,7 @@
           <slot name="date">date</slot>
         </div>
       </div>
-    </a>
+    </nuxt-link>
   </div>
 </template>
 
