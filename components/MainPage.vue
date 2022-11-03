@@ -4,7 +4,7 @@
       <MainHeader />
     </div>
     <div class="col-span-2">
-      <SideBar :menus="menus" @onShowPostCard="getPostCard" />
+      <SideBar :menus="menus" />
     </div>
     <div class="col-start-4 col-end-10 2xl:col-start-5 2xl:col-end-9">
       <div v-if="showCard">

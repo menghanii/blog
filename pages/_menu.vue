@@ -3,8 +3,8 @@
 </template>
 <script>
 export default {
-  async asyncData({ route }) {
-    const path = route.fullPath.slice(1);
+  async asyncData({ params }) {
+    const path = params.menu;
     return {
       path,
     };
