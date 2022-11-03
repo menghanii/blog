@@ -1,6 +1,6 @@
 <template>
   <div class="relative border h-64 rounded-lg">
-    <a :href="path">
+    <a :href="postPath">
       <div class="w-full h-2/3 bg-slate-600 rounded-t-lg">
         <img :src="image" class="object-cover rounded-t-lg h-full" />
       </div>
