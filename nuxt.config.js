@@ -40,10 +40,30 @@ export default {
 
   generate: {
     subFolders: false,
+    // async routes() {
+    //   const { $content } = require("@nuxt/content");
+    //   const files = await $content({ deep: true }).only(["path"]).fetch();
+    //   return files.map((file) => (file.path === "/index" ? "/" : file.path));
+    // },
     async routes() {
       const { $content } = require("@nuxt/content");
       const files = await $content({ deep: true }).only(["path"]).fetch();
-      return files.map((file) => (file.path === "/index" ? "/" : file.path));
+      const routes = [];
+      files.map((file) => {
+        const dir = "/" + file.path.split("/")[1];
+        if (routes.includes(dir)) {
+          routes.push(file.path);
+        } else {
+          routes.push(dir);
+          if (file.path === "/index") {
+            routes.push("/");
+          } else {
+            routes.push(file.path);
+          }
+        }
+      });
+      console.log(routes);
+      return routes;
     },
   },
 
