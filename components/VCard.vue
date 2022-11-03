@@ -24,7 +24,7 @@ export default {
   },
 
   props: {
-    path: String,
+    postPath: String,
     image: String,
   },
 

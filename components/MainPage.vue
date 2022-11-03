@@ -14,7 +14,7 @@
             :key="i"
             class="w-1/3 p-2"
           >
-            <VCard :path="post.url" :image="post.image">
+            <VCard :postPath="post.url" :image="post.image">
               <div slot="title">{{ post.title }}</div>
               <div slot="subtitle">{{ post.subtitle }}</div>
               <div slot="date">⚡️{{ post.date }}</div>
