@@ -1,10 +1,16 @@
 <template>
   <div>
     <div>
-      <VMenuBig>{{ bigMenu }}</VMenuBig>
+      <VMenuBig> {{ category }} ({{ contents.length }}) </VMenuBig>
     </div>
-    <div v-for="(menu, i) in smallMenu" :key="i" class="pl-4">
-      <VMenuSmall>{{ menu }}</VMenuSmall>
+    <div v-if="show">
+      <div v-for="(content, i) in contents" :key="i">
+        <VMenuSmall>
+          <a :href="content['url']">
+            {{ content["title"] }}
+          </a>
+        </VMenuSmall>
+      </div>
     </div>
   </div>
 </template>
@@ -14,16 +20,22 @@ export default {
   name: "BlogVMenu",
 
   data() {
-    return {};
+    return {
+      show: false,
+    };
   },
 
   props: {
-    bigMenu: String,
-    smallMenu: Array,
+    category: String,
+    contents: Array,
   },
   mounted() {},
 
-  methods: {},
+  methods: {
+    onExpand() {
+      this.show = !this.show;
+    },
+  },
 };
 </script>
 

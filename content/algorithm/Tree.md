@@ -1,6 +1,11 @@
 ---
-title : "트리"
-comments: true
+title: 트리
+subtitle: 트리 알고리즘을 알아보자.
+tag: [프로그래밍, 알고리즘, 트리]
+image: https://images.velog.io/images/syd1215no/post/e3411996-78b1-4e25-bd84-bd910878cfeb/image.png
+category: algorithm
+date: "2020-10-19"
+order: 2
 ---
 
 ## 순회 순서
@@ -18,7 +23,7 @@ comments: true
 ## 트리의 활용
 
 - 가장 마음 편한 방법은 일일이 구현하는 것. 번거롭긴 하지만, 내가 만든 것이기 때문에 관리가 쉽다.
-- 혹은 **anytree** 라이브러리를 설치하여 사용하는 방법이 있다. 
+- 혹은 **anytree** 라이브러리를 설치하여 사용하는 방법이 있다.
 
 ```python
 !pip install anytree
@@ -26,7 +31,7 @@ import anytree
 
 from anytree import Node
 # 첫 번째 인자는 노드의 이름. 명시적으로 데이터 값을 지정하려면 data 인자를 사용.
-n = Node("n") 
+n = Node("n")
 # 인자 parent는 부모노드를 가리킴.
 # parent 인자를 지정하지 않으면, 루트 노드가 됨.
 a = Node("a", parent=n)
@@ -79,4 +84,3 @@ from anytree.search import find_by_attr
 print(find_by_attr(n, "d"))
 # Node ('/n/b/d')
 ```
-

@@ -1,5 +1,5 @@
 <template>
-  <div class="text-black text-xl">
+  <div class="text-black text-xl select-none cursor-pointer">
     <slot> menu(big) </slot>
   </div>
 </template>

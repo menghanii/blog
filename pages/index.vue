@@ -1,5 +1,5 @@
 <template>
-  <MainPage>Welcome! to my page..</MainPage>
+  <MainPage> hello world! </MainPage>
 </template>
 
 <script>

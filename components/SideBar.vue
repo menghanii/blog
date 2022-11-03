@@ -1,10 +1,15 @@
 <template>
-  <div class="bg-white border p-4 h-screen">
-    <div v-for="(menu, i) in menuList" :key="i" class="mb-4">
-      <VMenu :bigMenu="menu.bigMenu" :smallMenu="menu.smallMenu"></VMenu>
-    </div>
-    <div v-for="(content, i) in contentList" :key="i" class="mb-4">
-      {{ content.title }}
+  <div class="bg-white pl-8 h-screen">
+    <div class="bg-black">sss</div>
+    <div class="mt-16">
+      <div v-for="(menu, i) in Object.keys(menus)" :key="i" class="mb-4">
+        <div @click="moveOnTo(menu)">
+          <VMenu
+            :category="menus[menu]['name']"
+            :contents="menus[menu]['content']"
+          ></VMenu>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -14,31 +19,18 @@ export default {
   name: "BlogSideBar",
 
   data() {
-    return {
-      contentList: [],
-      menuList: [
-        {
-          bigMenu: "Python",
-          smallMenu: ["python1", "python2", "python3"],
-        },
-        {
-          bigMenu: "About",
-          smallMenu: ["me", "you", "we", "all"],
-        },
-      ],
-    };
+    return {};
+  },
+  props: {
+    menus: Object,
   },
 
-  mounted() {
-    this.$content({ deep: true })
-      .only(["title"])
-      .fetch()
-      .then((result) => {
-        this.contentList = result;
-      });
+  mounted() {},
+  methods: {
+    moveOnTo(target) {
+      location.href = target;
+    },
   },
-
-  methods: {},
 };
 </script>
 

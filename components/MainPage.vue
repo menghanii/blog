@@ -1,31 +1,77 @@
 <template>
   <div class="grid grid-cols-12 font">
-    <div class="col-span-1 bg-zinc-400 text-center">hello</div>
-    <div class="col-span-1 bg-slate-700 text-white text-center">world</div>
-    <div class="col-span-1 bg-zinc-400 text-center">hello</div>
-    <div class="col-span-1 bg-slate-700 text-white text-center">world</div>
-    <div class="col-span-1 bg-zinc-400 text-center">hello</div>
-    <div class="col-span-1 bg-slate-700 text-white text-center">world</div>
-    <div class="col-span-1 bg-zinc-400 text-center">hello</div>
-    <div class="col-span-1 bg-slate-700 text-white text-center">world</div>
-    <div class="col-span-1 bg-zinc-400 text-center">hello</div>
-    <div class="col-span-1 bg-slate-700 text-white text-center">world</div>
-    <div class="col-span-1 bg-zinc-400 text-center">hello</div>
-    <div class="col-span-1 bg-slate-700 text-white text-center">world</div>
     <div class="col-span-12">
       <MainHeader />
     </div>
-    <div class="col-span-3">
-      <SideBar />
+    <div class="col-span-2">
+      <SideBar :menus="menus" @onShowPostCard="getPostCard" />
     </div>
     <div class="col-start-4 col-end-10 2xl:col-start-5 2xl:col-end-9">
-      <slot></slot>
+      <div v-if="showCard">
+        <div class="flex flex-wrap">
+          <div
+            v-for="(post, i) in menus[path]['content']"
+            :key="i"
+            class="w-1/3 p-2"
+          >
+            <VCard :path="post.url" :image="post.image">
+              <div slot="title">{{ post.title }}</div>
+              <div slot="subtitle">{{ post.subtitle }}</div>
+              <div slot="date">⚡️{{ post.date }}</div>
+            </VCard>
+          </div>
+        </div>
+      </div>
+      <div v-else>
+        <slot></slot>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      menus: {
+        python: { name: "파이썬", content: [] },
+        linux: { name: "리눅스", content: [] },
+        git: { name: "Git", content: [] },
+        algorithm: { name: "알고리즘", content: [] },
+        statistics: { name: "통계", content: [] },
+        nlp: { name: "NLP", content: [] },
+        vision: { name: "비전", content: [] },
+        recsys: { name: "추천시스템", content: [] },
+        ops: { name: "Ops", content: [] },
+        etc: { name: "기타", content: [] },
+        graph: { name: "그래프", content: [] },
+      },
+    };
+  },
+  mounted() {
+    this.$content({ deep: true })
+      .only(["title", "subtitle", "image", "path", "date", "order"])
+      .fetch()
+      .then((result) => {
+        result.map((r) => {
+          const category = r["path"].split("/")[1];
+          this.menus[category]["content"].push({
+            title: r["title"],
+            subtitle: r["subtitle"],
+            image: r["image"],
+            url: r["path"],
+            date: r["date"],
+            order: r["order"],
+          });
+        });
+      });
+  },
+  props: {
+    showCard: Boolean,
+    path: String,
+  },
+  methods: {},
+};
 </script>
 <style>
 @import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
