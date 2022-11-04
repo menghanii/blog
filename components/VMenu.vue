@@ -3,15 +3,6 @@
     <div>
       <VMenuBig> {{ category }} ({{ contents.length }}) </VMenuBig>
     </div>
-    <!-- <div v-if="show">
-      <div v-for="(content, i) in contents" :key="i">
-        <VMenuSmall>
-          <a :href="content['url']">
-            {{ content["title"] }}
-          </a>
-        </VMenuSmall>
-      </div>
-    </div> -->
   </div>
 </template>
 

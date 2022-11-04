@@ -1,18 +1,22 @@
 <template>
-  <div class="grid grid-cols-12 font">
+  <div class="grid grid-cols-12">
     <div class="col-span-12">
       <MainHeader />
     </div>
-    <div class="col-span-2">
+    <div
+      class="lg:col-start-1 lg:col-end-4 2xl:col-start-3 2xl:col-end-5 hidden lg:block"
+    >
       <SideBar :menus="menus" />
     </div>
-    <div class="col-start-4 col-end-10 2xl:col-start-5 2xl:col-end-9">
+    <div
+      class="bg-white col-span-12 lg:col-start-4 lg:col-end-11 2xl:col-start-5 2xl:col-end-9 min-h-screen rounded-xl"
+    >
       <div v-if="showCard">
         <div class="flex flex-wrap">
           <div
             v-for="(post, i) in menus[path]['content']"
             :key="i"
-            class="w-1/3 p-2"
+            class="w-full sm:w-1/2 lg:w-1/3 p-0.5"
           >
             <VCard :postPath="post.url" :image="post.image">
               <div slot="title">{{ post.title }}</div>

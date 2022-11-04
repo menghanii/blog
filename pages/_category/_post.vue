@@ -1,24 +1,27 @@
 <template>
   <MainPage>
-    <article>
-      <div class="my-2 md:my-16">
-        <h1 class="font-bold text-xl text-center sm:text-5xl">
-          {{ page.title }}
-        </h1>
-        <div class="flex justify-center">
-          <div
-            v-for="(tag, i) in page.tag"
-            :key="i"
-            class="px-2 py-1 m-0.5 mt-2 bg-slate-700 text-white text-xs rounded-full"
-          >
-            #{{ tag }}
+    <div class="px-4 sm:px-8">
+      <article>
+        <div class="my-2 md:my-16">
+          <h1 class="font-bold text-xl text-center sm:text-5xl">
+            {{ page.title }}
+          </h1>
+          <div class="flex justify-center">
+            <div
+              v-for="(tag, i) in page.tag"
+              :key="i"
+              class="px-2 py-1 m-0.5 mt-2 bg-slate-700 text-white text-xs rounded-full"
+            >
+              #{{ tag }}
+            </div>
           </div>
         </div>
-      </div>
-      <nuxt-content :document="page" />
-    </article>
+        <nuxt-content :document="page" />
+      </article>
+    </div>
   </MainPage>
 </template>
+
 <script>
 export default {
   async asyncData({ $content, params }) {
@@ -40,6 +43,8 @@ export default {
   line-height: 2rem;
   color: #383839;
   font-weight: 300;
+  font-size: 1rem;
+  word-break: break-all;
 }
 
 .nuxt-content h2 {
