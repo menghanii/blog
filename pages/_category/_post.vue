@@ -52,4 +52,18 @@ export default {
   font-weight: 600;
   margin: 1rem 0;
 }
+
+@media (max-width: 640px) {
+  .nuxt-content {
+    font-size: 0.8rem;
+  }
+
+  .nuxt-content h2 {
+    font-size: 1rem;
+  }
+
+  .nuxt-content-highlight {
+    font-size: 0.7rem;
+  }
+}
 </style>

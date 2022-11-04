@@ -1,5 +1,5 @@
 <template>
-  <MainPage> hello world! </MainPage>
+  <MainPage :showCard="true" path="algorithm"></MainPage>
 </template>
 
 <script>
