@@ -1,9 +1,11 @@
 ---
-title : "[Python] Programmers - 더 맵게 (Heap - heapq, heapify, heappop, heappush)"
-tag: [알고리즘]
-categories: [algorithms]
-math : true
-comments: true
+title: "[Python] Programmers - 더 맵게 "
+subtitle: Programmers 더 맵게 문제 풀이 (Heap - heapq, heapify, heappop, heappush)
+tag: [프로그래머스, 알고리즘, heap]
+category: algorithm
+image:
+date: "2021-07-13"
+order: 1
 ---
 
 https://programmers.co.kr/learn/courses/30/lessons/42626?language=python3
@@ -18,8 +20,6 @@ https://programmers.co.kr/learn/courses/30/lessons/42626?language=python3
 Leo는 모든 음식의 스코빌 지수가 K 이상이 될 때까지 반복하여 섞습니다.
 Leo가 가진 음식의 스코빌 지수를 담은 배열 scoville과 원하는 스코빌 지수 K가 주어질 때, 모든 음식의 스코빌 지수를 K 이상으로 만들기 위해 섞어야 하는 최소 횟수를 return 하도록 solution 함수를 작성해주세요.
 ```
-
-
 
 ### 최초 풀이
 
@@ -52,9 +52,9 @@ def solution(scoville, K):
 
 ### 두 번째 풀이 : `heap`
 
-두 번째는 파이썬 내장 모듈인 `heapq`를 사용하여 풀었다.**`heap`은 최댓값 및 최솟값을 찾아내는 연산을 빠르게 하기 위해 고안된, 완전이진트리를 기본으로 하는 자료구조이다.** 부모노드의 키 값이 자식노드의 키 값보다 항상 큰 힙을 `최대 힙(max heap)`, 항상 작은 힙을 `최소 힙(min heap)`이라 한다. Python에서 제공하는 `heapq`에서는 기본적으로 `최소 힙`을 제공한다. `heappush` 를 사용하여 값을 추가하고, `heappop`을 통해 가장 작은 값부터 빼내어 반환한다. 이전 풀이에서 시간 초과의 원인이었던 매 iteration마다의 sort 반복을 해결해줄 수 있다. 
+두 번째는 파이썬 내장 모듈인 `heapq`를 사용하여 풀었다.**`heap`은 최댓값 및 최솟값을 찾아내는 연산을 빠르게 하기 위해 고안된, 완전이진트리를 기본으로 하는 자료구조이다.** 부모노드의 키 값이 자식노드의 키 값보다 항상 큰 힙을 `최대 힙(max heap)`, 항상 작은 힙을 `최소 힙(min heap)`이라 한다. Python에서 제공하는 `heapq`에서는 기본적으로 `최소 힙`을 제공한다. `heappush` 를 사용하여 값을 추가하고, `heappop`을 통해 가장 작은 값부터 빼내어 반환한다. 이전 풀이에서 시간 초과의 원인이었던 매 iteration마다의 sort 반복을 해결해줄 수 있다.
 
-먼저 `heapq`를 import하고, 일반적인 리스트를 힙 자료구조로 만들어주기 위해 `heapify`를 사용한다. `heapify`는 `O(N)`의 시간복잡도를 갖는다. 
+먼저 `heapq`를 import하고, 일반적인 리스트를 힙 자료구조로 만들어주기 위해 `heapify`를 사용한다. `heapify`는 `O(N)`의 시간복잡도를 갖는다.
 
 `heapq` 의 메소드 사용법은 `heapq.method()`로 이루어져 있으며, 객체를 인자에 넣는 방식으로 이루어진다.
 
@@ -86,7 +86,7 @@ def solution(scoville, K):
             new_spice = first_spicy + (2*second_spicy)
             answer += 1
             heapq.heappush(scoville, new_spice) # 요기
-    return answer   
+    return answer
 ```
 
 `heappush`를 하는 경우 heap 자료구조에서는 이진트리 내 원소 간 대소 비교를 통해 push를 수행한다. `heappush`는 `O(logN)`의 시간복잡도를 갖는다. `heappop`역시 `O(logN)`의 시간복잡도를 갖는다. 따라서 위 알고리즘의 경우 `heap`내의 모든 원소를 돈다는 것을 가정할 때, `O(N * logN)`의 시간복잡도를 갖는다.
@@ -94,4 +94,3 @@ def solution(scoville, K):
 따라서, 결과는? 성공했다.
 
 ![image-20210713162229023](/assets/img/post-images/image-20210713162229023.png){: width="100%"}
-

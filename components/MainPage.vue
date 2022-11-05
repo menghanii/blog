@@ -54,9 +54,12 @@ export default {
   },
   mounted() {
     this.$content({ deep: true })
+      .sortBy("date", "desc")
+      .sortBy("order", "desc")
       .only(["title", "subtitle", "image", "path", "date", "order"])
       .fetch()
       .then((result) => {
+        console.log(result);
         result.map((r) => {
           const category = r["path"].split("/")[1];
           this.menus[category]["content"].push({

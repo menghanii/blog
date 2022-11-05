@@ -8,7 +8,9 @@
         <div class="font-semibold text-sm sm:text-md">
           <slot name="title">title</slot>
         </div>
-        <div class="text-sm"><slot name="subtitle">subtitle</slot></div>
+        <div class="text-xs text-gray-500 mt-1">
+          <slot name="subtitle">subtitle</slot>
+        </div>
         <div class="absolute bottom-0 left-2 text-xs">
           <slot name="date">date</slot>
         </div>
