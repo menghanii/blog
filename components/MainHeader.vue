@@ -5,11 +5,13 @@
     <div
       class="flex items-center col-start-1 col-end-2 2xl:col-start-3 2xl:col-end-5 px-4"
     >
-      <font-awesome-icon
-        icon="bars"
-        class="cursor-pointer text-white fa-sm"
-        @click="showSidebar"
-      />
+      <div class="w-full sm:w-1/2 lg:w-1/4 2xl:w-1/8">
+        <font-awesome-icon
+          icon="bars"
+          class="cursor-pointer text-white"
+          @click="showSidebar"
+        />
+      </div>
     </div>
     <div
       class="flex justify-center items-center p-2 col-start-2 col-end-12 2xl:col-start-5 2xl:col-end-9 text-white"
