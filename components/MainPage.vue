@@ -101,7 +101,7 @@ export default {
     },
     propImage(image) {
       if (!image) {
-        return "/gradient_image.png";
+        return "./gradient_image.png";
       } else {
         return image;
       }
