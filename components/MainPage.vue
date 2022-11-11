@@ -30,6 +30,9 @@
         <slot></slot>
       </div>
     </div>
+    <div class="col-span-12">
+      <MainFooter />
+    </div>
   </div>
 </template>
 
@@ -38,6 +41,7 @@ export default {
   data() {
     return {
       menus: {
+        all: { name: "전체", content: [] },
         python: { name: "파이썬", content: [] },
         linux: { name: "리눅스", content: [] },
         git: { name: "Git", content: [] },
@@ -62,6 +66,14 @@ export default {
         console.log(result);
         result.map((r) => {
           const category = r["path"].split("/")[1];
+          this.menus["all"]["content"].push({
+            title: r["title"],
+            subtitle: r["subtitle"],
+            image: r["image"],
+            url: r["path"],
+            date: r["date"],
+            order: r["order"],
+          });
           this.menus[category]["content"].push({
             title: r["title"],
             subtitle: r["subtitle"],

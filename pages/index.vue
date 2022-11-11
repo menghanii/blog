@@ -1,5 +1,5 @@
 <template>
-  <MainPage :showCard="true" path="algorithm"></MainPage>
+  <MainPage :showCard="true" path="all"></MainPage>
 </template>
 
 <script>
