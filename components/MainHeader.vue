@@ -7,7 +7,7 @@
     >
       <font-awesome-icon
         icon="bars"
-        class="cursor-pointer text-white"
+        class="cursor-pointer text-white text-xl"
         @click="showSidebar"
       />
     </div>
