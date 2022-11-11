@@ -33,6 +33,7 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/tailwindcss
     "@nuxtjs/tailwindcss",
+    "@nuxtjs/fontawesome",
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -74,5 +75,18 @@ export default {
   //router
   router: {
     base: "/blog/",
+  },
+
+  content: {
+    markdown: {
+      remarkPlugins: ["remark-math"],
+      rehypePlugins: ["rehype-katex"],
+    },
+  },
+
+  fontawesome: {
+    icons: {
+      solid: ["faBars"],
+    },
   },
 };

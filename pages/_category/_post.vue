@@ -2,8 +2,8 @@
   <MainPage>
     <div class="px-4 sm:px-8">
       <article>
-        <div>
-          <h1 class="font-bold text-lg text-center sm:text-4xl break-keep">
+        <div class="my-10 sm:my-16">
+          <h1 class="font-bold text-xl text-center sm:text-4xl break-keep">
             {{ page.title }}
           </h1>
           <div class="text-xs sm:text-sm text-center text-gray-500 my-2">
@@ -13,7 +13,7 @@
             <div
               v-for="(tag, i) in page.tag"
               :key="i"
-              class="px-2 py-1 m-0.5 mt-2 bg-slate-700 text-white text-xs rounded-full"
+              class="px-2 py-1 m-0.5 mt-2 bg-slate-700 text-white text-[0.6rem] sm:text-xs rounded-full"
             >
               #{{ tag }}
             </div>
@@ -96,8 +96,8 @@ export default {
   font-size: 1.5rem;
   font-weight: bold;
   margin: 1.5rem 0;
-  border-left: 0.5rem solid gray;
-  border-bottom: 1px solid gray;
+  border-left: 0.5rem solid rgb(63 63 70);
+  border-bottom: 1px solid rgb(63 63 70);
   padding: 0.5rem;
 }
 
@@ -121,7 +121,7 @@ export default {
   }
 
   .nuxt-content h2 {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
   }
 
   .nuxt-content h3 {

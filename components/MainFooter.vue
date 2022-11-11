@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-4 sm:mt-8 text-center text-gray-500 text-xs sm:text-sm">
+  <div class="mt-16 text-center text-gray-500 text-xs sm:text-sm">
     welcome to my blog
   </div>
 </template>

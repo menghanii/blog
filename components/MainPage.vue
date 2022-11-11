@@ -1,27 +1,33 @@
 <template>
   <div class="grid grid-cols-12">
     <div class="col-span-12">
-      <MainHeader />
+      <MainHeader @showSidebar="showSidebar" />
     </div>
     <div
-      class="lg:col-start-1 lg:col-end-4 2xl:col-start-3 2xl:col-end-5 hidden lg:block mt-16 sm:mt-24"
+      v-if="showSide"
+      class="col-span-12 lg:col-start-1 lg:col-end-4 2xl:col-start-3 2xl:col-end-5 mt-16 sm:mt-24"
     >
-      <SideBar :menus="menus" />
+      <div class="lg:fixed">
+        <SideBar :menus="menus" />
+      </div>
     </div>
     <div
-      class="bg-white col-span-12 lg:col-start-4 lg:col-end-11 2xl:col-start-5 2xl:col-end-9 min-h-screen rounded-xl mt-16 sm:mt-24"
+      class="bg-white col-span-12 lg:col-start-4 lg:col-end-12 2xl:col-start-5 2xl:col-end-9 min-h-screen rounded-xl mt-10 sm:mt-16"
     >
       <div v-if="showCard">
+        <div class="text-center text-2xl md:text-4xl font-semibold my-8">
+          {{ menus[path]["name"] }}
+        </div>
         <div class="flex flex-wrap">
           <div
             v-for="(post, i) in menus[path]['content']"
             :key="i"
-            class="w-full sm:w-1/2 lg:w-1/3 p-0.5"
+            class="w-full sm:w-1/2 lg:w-1/3 p-0.5 sm:mb-8"
           >
-            <VCard :postPath="post.url" :image="post.image">
+            <VCard :postPath="post.url" :image="propImage(post.image)">
               <div slot="title">{{ post.title }}</div>
               <div slot="subtitle">{{ post.subtitle }}</div>
-              <div slot="date">⚡️{{ post.date }}</div>
+              <div slot="date">🗓 {{ post.date }}</div>
             </VCard>
           </div>
         </div>
@@ -40,6 +46,7 @@
 export default {
   data() {
     return {
+      showSide: false,
       menus: {
         all: { name: "전체", content: [] },
         python: { name: "파이썬", content: [] },
@@ -51,8 +58,8 @@ export default {
         vision: { name: "비전", content: [] },
         recsys: { name: "추천시스템", content: [] },
         ops: { name: "Ops", content: [] },
-        etc: { name: "기타", content: [] },
         graph: { name: "그래프", content: [] },
+        etc: { name: "기타", content: [] },
       },
     };
   },
@@ -88,7 +95,18 @@ export default {
     showCard: Boolean,
     path: String,
   },
-  methods: {},
+  methods: {
+    showSidebar() {
+      this.showSide = !this.showSide;
+    },
+    propImage(image) {
+      if (!image) {
+        return "/gradient_image.png";
+      } else {
+        return image;
+      }
+    },
+  },
 };
 </script>
 <style>

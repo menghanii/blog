@@ -1,8 +1,21 @@
 <template>
   <div
-    class="flex justify-center items-center p-2 bg-white fixed w-full h-16 sm:h-24 z-50"
+    class="grid grid-cols-12 fixed bg-white w-full h-10 md:h-16 z-50 bg-zinc-700"
   >
-    My Blog
+    <div
+      class="flex items-center col-start-1 col-end-2 2xl:col-start-3 2xl:col-end-5 px-4"
+    >
+      <font-awesome-icon
+        icon="bars"
+        class="cursor-pointer text-white"
+        @click="showSidebar"
+      />
+    </div>
+    <div
+      class="flex justify-center items-center p-2 col-start-2 col-end-12 2xl:col-start-5 2xl:col-end-9 text-white"
+    >
+      My Blog
+    </div>
   </div>
 </template>
 
@@ -16,7 +29,11 @@ export default {
 
   mounted() {},
 
-  methods: {},
+  methods: {
+    showSidebar() {
+      this.$emit("showSidebar");
+    },
+  },
 };
 </script>
 
