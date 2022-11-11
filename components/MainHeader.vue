@@ -3,12 +3,11 @@
     class="grid grid-cols-12 fixed bg-white w-full h-10 md:h-16 z-50 bg-zinc-700"
   >
     <div
-      class="flex items-center col-start-1 col-end-2 2xl:col-start-3 2xl:col-end-5 px-4"
+      class="flex items-center col-start-1 col-end-2 2xl:col-start-3 2xl:col-end-5 px-4 h-full"
     >
       <font-awesome-icon
         icon="bars"
-        class="cursor-pointer text-white"
-        style="font-size: 16px"
+        class="cursor-pointer text-white h-full"
         @click="showSidebar"
       />
     </div>
