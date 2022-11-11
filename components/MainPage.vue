@@ -4,12 +4,12 @@
       <MainHeader />
     </div>
     <div
-      class="lg:col-start-1 lg:col-end-4 2xl:col-start-3 2xl:col-end-5 hidden lg:block"
+      class="lg:col-start-1 lg:col-end-4 2xl:col-start-3 2xl:col-end-5 hidden lg:block mt-16 sm:mt-24"
     >
       <SideBar :menus="menus" />
     </div>
     <div
-      class="bg-white col-span-12 lg:col-start-4 lg:col-end-11 2xl:col-start-5 2xl:col-end-9 min-h-screen rounded-xl"
+      class="bg-white col-span-12 lg:col-start-4 lg:col-end-11 2xl:col-start-5 2xl:col-end-9 min-h-screen rounded-xl mt-16 sm:mt-24"
     >
       <div v-if="showCard">
         <div class="flex flex-wrap">
@@ -63,7 +63,6 @@ export default {
       .only(["title", "subtitle", "image", "path", "date", "order"])
       .fetch()
       .then((result) => {
-        console.log(result);
         result.map((r) => {
           const category = r["path"].split("/")[1];
           this.menus["all"]["content"].push({

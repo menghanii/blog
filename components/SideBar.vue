@@ -1,5 +1,5 @@
 <template>
-  <div class="p-8">
+  <div class="px-8">
     <div v-for="(menu, i) in Object.keys(menus)" :key="i" class="mb-4">
       <nuxt-link :to="'/' + menu">
         <div>

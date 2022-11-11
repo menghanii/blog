@@ -1,5 +1,7 @@
 <template>
-  <div class="mt-4 sm:mt-8 text-center text-gray-500">welcome to my blog</div>
+  <div class="mt-4 sm:mt-8 text-center text-gray-500 text-xs sm:text-sm">
+    welcome to my blog
+  </div>
 </template>
 
 <script>
