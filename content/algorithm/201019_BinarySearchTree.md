@@ -1,6 +1,9 @@
 ---
-title: "이진탐색트리"
-category: ["algorithm"]
+title: 이진탐색트리(Binary Searching Tree)
+subtitle: 이진탐색트리에 대해 알아보자.
+tag: [프로그래밍, 알고리즘, 트리]
+image:
+category: algorithm
 date: "2020-10-19"
 order: 1
 ---

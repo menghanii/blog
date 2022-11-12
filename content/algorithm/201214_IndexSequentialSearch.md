@@ -1,5 +1,8 @@
 ---
-title: 색인순차검색
+title: 색인순차검색(Index Sequential Search)
+subtitle: 색인순차검색이 무엇인고?
+tag: [프로그래밍, 알고리즘, 색인순차검색]
+image:
 category: ["algorithm"]
 date: "2020-12-14"
 order: 1

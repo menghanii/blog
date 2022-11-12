@@ -12,9 +12,9 @@
       </div>
     </div>
     <div
-      class="flex justify-center items-center p-2 col-start-2 col-end-12 2xl:col-start-5 2xl:col-end-9 text-white"
+      class="flex justify-center items-center p-2 col-start-2 col-end-12 2xl:col-start-5 2xl:col-end-9 text-white h-full"
     >
-      My Blog
+      <img src="logo.png" class="h-6 sm:h-10 select-none" />
     </div>
   </div>
 </template>

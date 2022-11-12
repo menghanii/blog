@@ -1,6 +1,10 @@
 <template>
-  <div class="px-8">
-    <div v-for="(menu, i) in Object.keys(menus)" :key="i" class="mb-4">
+  <div class="px-8 py-4">
+    <div
+      v-for="(menu, i) in Object.keys(menus)"
+      :key="i"
+      class="mb-4 text-white"
+    >
       <nuxt-link :to="'/' + menu">
         <div>
           <VMenu
