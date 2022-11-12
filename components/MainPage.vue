@@ -6,6 +6,7 @@
     <div
       v-if="showSide"
       class="fixed top-10 sm:top-16 z-50 bg-zinc-700 w-full border-b grid grid-cols-12"
+      id="slide"
     >
       <div
         class="col-span-12 lg:col-start-1 lg:col-end-4 2xl:col-start-3 2xl:col-end-5"
@@ -17,9 +18,7 @@
       class="bg-white col-span-12 lg:col-start-4 lg:col-end-12 2xl:col-start-5 2xl:col-end-9 min-h-screen rounded-xl mt-10 sm:mt-16"
     >
       <div v-if="showCard">
-        <div
-          class="text-center text-2xl md:text-4xl font-semibold my-8 select-none"
-        >
+        <div class="text-center text-2xl md:text-4xl my-8 select-none">
           {{ menus[path]["name"] }}
         </div>
         <div class="flex flex-wrap">

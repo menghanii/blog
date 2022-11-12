@@ -70,30 +70,33 @@ export default {
 @import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
 
 .nuxt-content {
-  font-family: "Spoqa Han Sans Neo", "sans-serif";
+  font-family: "ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji";
   word-break: break-all;
-  line-height: 2rem;
-  color: black;
-  font-weight: 300;
+  line-height: 1.5rem;
+  color: #262626;
+  font-weight: 400;
   font-size: 1rem;
   word-break: break-all;
 }
 
 .nuxt-content h1 {
   font-size: 2rem;
+  color: black;
   font-weight: bold;
   margin: 2rem 0;
 }
 
 .nuxt-content h2 {
   font-size: 1.8rem;
-  font-weight: 600;
+  color: black;
+  font-weight: 500;
   margin: 1.8rem 0;
 }
 
 .nuxt-content h3 {
   font-size: 1.5rem;
-  font-weight: bold;
+  color: black;
+  font-weight: 500;
   margin: 1.5rem 0;
   border-left: 0.5rem solid rgb(63 63 70);
   border-bottom: 1px solid rgb(63 63 70);
@@ -102,17 +105,18 @@ export default {
 
 .nuxt-content h4 {
   font-size: 1rem;
+  color: black;
   font-weight: bold;
   margin: 1rem 0;
 }
 
 .nuxt-content p {
-  margin: 1rem 0;
+  margin: 1.2rem 0;
 }
 
 @media (max-width: 640px) {
   .nuxt-content {
-    font-size: 0.8rem;
+    font-size: 1rem;
   }
 
   .nuxt-content h1 {

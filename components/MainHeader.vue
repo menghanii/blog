@@ -3,7 +3,7 @@
     <div
       class="flex items-center col-start-1 col-end-2 2xl:col-start-3 2xl:col-end-5 px-4"
     >
-      <div class="w-full sm:w-1/2 lg:w-1/4 2xl:w-1/8">
+      <div>
         <font-awesome-icon
           icon="bars"
           class="cursor-pointer text-white text-xl"
@@ -14,7 +14,7 @@
     <div
       class="flex justify-center items-center p-2 col-start-2 col-end-12 2xl:col-start-5 2xl:col-end-9 text-white h-full"
     >
-      <img src="logo.png" class="h-6 sm:h-10 select-none" />
+      <img src="logo.png" class="h-6 md:h-10 select-none" />
     </div>
   </div>
 </template>
