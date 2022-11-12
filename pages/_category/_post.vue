@@ -52,7 +52,6 @@ export default {
       .surround(this.page.slug)
       .fetch()
       .then((result) => {
-        console.log(result);
         if (result[0] === null) {
           this.prev = { title: "없음", path: "/" };
         } else {
