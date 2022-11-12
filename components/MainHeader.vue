@@ -6,8 +6,7 @@
       <div class="w-full sm:w-1/2 lg:w-1/4 2xl:w-1/8">
         <font-awesome-icon
           icon="bars"
-          class="cursor-pointer text-white"
-          style="font-size: 16px"
+          class="cursor-pointer text-white text-xl"
           @click="showSidebar"
         />
       </div>
